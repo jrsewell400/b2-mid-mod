@@ -22,12 +22,6 @@ RSpec.describe "As a user," do
             expect(page).to have_content('85')
             expect(page).to have_content('Surviving Progress')
             expect(page).to have_content('Cowspiracy')
-            save_and_open_page
         end
     end
 end  
-
-## Story 2
-# As a user,
-# When I visit an actor's show page,
-# I see their name, their age, and a list of the names of all of the movies they are in.
