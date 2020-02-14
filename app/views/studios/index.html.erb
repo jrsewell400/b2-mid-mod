@@ -2,5 +2,7 @@
 
 <% @studios.each do |studio| %>
     <h2> <%= studio.name %> </h2>
-    <%= movies.title %>
+    <% studio.movies.each do |movie| %>
+        <%= movie.title %></br>
+    <% end %>
 <% end %>

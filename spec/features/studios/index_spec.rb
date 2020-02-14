@@ -25,12 +25,7 @@ RSpec.describe "As a user," do
             expect(page).to have_content('Dude Wheres My Car?')
             expect(page).to have_content('Surviving Progress')
             expect(page).to have_content('Cowspiracy')
+            save_and_open_page
         end
     end
 end  
-
-## Story 1
-# As a user, 
-# When I visit the studio index page
-# I see a list of all of the movie studios 
-# And underneath each studio, I see the names of all of its movies.
