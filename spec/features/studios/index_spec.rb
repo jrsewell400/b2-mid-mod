@@ -7,17 +7,24 @@ RSpec.describe "As a user," do
 
             studio_2 = Studio.create(name: 'Documentary Studio')
 
-            movie_1 = Movie.create(title: 'Dude Wheres My Car?')
+            movie_1 = Movie.create(title: 'Dude Wheres My Car?',
+                                   studio_id: studio_1.id
+                                  )
 
-            movie_2 = Movie.create(title: 'Surviving Progress')
+            movie_2 = Movie.create(title: 'Surviving Progress',
+                                   studio_id: studio_2.id
+                                  )
 
-            movie_3 = Movie.create(title: 'Cowspiracy')
+            movie_3 = Movie.create(title: 'Cowspiracy',
+                                   studio_id: studio_2.id
+                                  )
             
-            visit '/'
+            visit '/studios'
             expect(page).to have_content('Comedy Studio')
-            expect(page).to have_content('Comedy Studio')
-            expect(page).to have_content('Comedy Studio')
-            expect(page).to have_content('Comedy Studio')
+            expect(page).to have_content('Documentary Studio')
+            expect(page).to have_content('Dude Wheres My Car?')
+            expect(page).to have_content('Surviving Progress')
+            expect(page).to have_content('Cowspiracy')
         end
     end
 end  
