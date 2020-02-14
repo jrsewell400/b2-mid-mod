@@ -3,17 +3,18 @@ require 'rails_helper'
 RSpec.describe "As a user," do
     describe "when I visit an actor's show page" do
         it "I see their name, their age, and a list of the names of all of the movies they are in." do
-            actor = Actor.create(name: 'Jane Goodall',
-                                 age: '85'
-                                )
+            actor_1 = Actor.create(name: 'Jane Goodall',
+                                   age: '85'
+                                  )
 
             studio = Studio.create(name: 'Documentary Studio')
 
-            movie_2 = actor.movies.create(title: 'Surviving Progress',
-                                          actor: actor)
+            movie_2 = studio.movies.create(title: 'Surviving Progress')
 
-            movie_3 = actor.movies.create(title: 'Cowspiracy',
-                                          actor: actor)
+            movie_3 = studio.movies.create(title: 'Cowspiracy')
+            
+            ActorMovie.create(actor: actor_1, movie: movie_2)
+            ActorMovie.create(actor: actor_1, movie: movie_3)
             
             visit "/actors/#{actor_1.id}"
 
@@ -21,6 +22,7 @@ RSpec.describe "As a user," do
             expect(page).to have_content('85')
             expect(page).to have_content('Surviving Progress')
             expect(page).to have_content('Cowspiracy')
+            save_and_open_page
         end
     end
 end  
