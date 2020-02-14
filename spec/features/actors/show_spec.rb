@@ -3,19 +3,17 @@ require 'rails_helper'
 RSpec.describe "As a user," do
     describe "when I visit an actor's show page" do
         it "I see their name, their age, and a list of the names of all of the movies they are in." do
-            studio_2 = Studio.create(name: 'Documentary Studio')
-            
-            actor_1 = Actor.create(name: 'Jane Goodall',
-                                    age: '85'
-                                   )
+            actor = Actor.create(name: 'Jane Goodall',
+                                 age: '85'
+                                )
 
-            movie_2 = Movie.create(title: 'Surviving Progress',
-                                   studio_id: studio_2.id
-                                  )
+            studio = Studio.create(name: 'Documentary Studio')
 
-            movie_3 = Movie.create(title: 'Cowspiracy',
-                                   studio_id: studio_2.id
-                                  )
+            movie_2 = actor.movies.create(title: 'Surviving Progress',
+                                          actor: actor)
+
+            movie_3 = actor.movies.create(title: 'Cowspiracy',
+                                          actor: actor)
             
             visit "/actors/#{actor_1.id}"
 

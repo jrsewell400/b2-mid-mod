@@ -1,1 +1,11 @@
 <h1>ACTOR SHOW PAGE</h1>
+
+<% @actors.each do |actor| %>
+    <h2> Actor Infomation: </h2>
+    <%= actor.name %></br>
+    <%= actor.age %></br>
+    <% binding.pry %>
+    <% actor.movies.each do |movie| %>
+        <%= movie.title %></br>
+    <% end %>
+<% end %>
