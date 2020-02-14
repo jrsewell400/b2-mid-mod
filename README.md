@@ -4,7 +4,7 @@
 We are creating an application to track movies. We have studios, which have movies, and movies have several actors, and actors can be in several movies.
 Read each story carefully.
 
-## Story 1
+## Story 1 - DONE
 As a user, 
 When I visit the studio index page
 I see a list of all of the movie studios 

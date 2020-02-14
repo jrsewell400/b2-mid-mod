@@ -25,7 +25,6 @@ RSpec.describe "As a user," do
             expect(page).to have_content('Dude Wheres My Car?')
             expect(page).to have_content('Surviving Progress')
             expect(page).to have_content('Cowspiracy')
-            save_and_open_page
         end
     end
 end  
