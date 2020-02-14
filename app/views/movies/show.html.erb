@@ -1,0 +1,13 @@
+<h1>MOVIES SHOW PAGE</h1>
+
+<% @movies.each do |movie| %>
+    <h2>Movie Information:</h2>
+    <%= movie.title%>
+    <%= movie.creation_year %>
+    <%= movie.genre%>
+    <% movie.actors.each do |actor|%>
+        <%= actor.name %>
+        <%= actor.age %>
+        <%# Need to use ActiveRecord to sort age from youngest to oldest. %>
+    <% end %>
+<% end %>
