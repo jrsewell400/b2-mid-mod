@@ -10,19 +10,19 @@ When I visit the studio index page
 I see a list of all of the movie studios 
 And underneath each studio, I see the names of all of its movies.
 
-## Story 2
+## Story 2 - DONE
 As a user,
 When I visit an actor's show page,
 I see their name, their age, and a list of the names of all of the movies they are in.
 
-## Story 3
+## Story 3 - IN PROGRESS
 As a user, 
 When I visit a movie's show page.
 I see the movie's name, creation year, and genre, 
 and a list of all its actors from youngest to oldest.
 And I see the average age of all of the movie's actors 
 
-## Story 4
+## Story 4 - NOT STARTED
 As a user,
 When I visit a movie show page,
 I see a form for an actors name
@@ -31,7 +31,7 @@ I am redirected back to that movie's show page
 And I see the actor's name listed
 (This should not break story 3, You do not have to test for a sad path)
 
-## Story 5
+## Story 5 - NOT STARTED
 As a user,
 When I visit an actor's show page
 I see a unique list of all of the actors this particular actor has worked with.
